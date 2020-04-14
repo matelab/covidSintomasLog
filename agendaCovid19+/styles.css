@@ -1,0 +1,32 @@
+.Agenda{
+    margin-left: 31%;
+    width: 500px;
+    text-align: center;
+    background-color: cadetblue;
+    border-style: double;
+}
+.Agenda>header{
+    background-color: violet;
+    border: 3px solid green;
+    text-align: center;
+    font-size: 15pt;
+}
+.fondo{
+    background: url(https://media-cdn.tripadvisor.com/media/photo-c/2560x500/0b/4e/19/3c/nocturna-parque-de-la.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.fondo>header{
+    font-family: 'Girassol', cursive;
+    text-align: center;
+    font-size: 30pt;
+    color: red;
+}
+.Agenda>form>fieldset{
+    font-family: 'Fira Sans', sans-serif;
+}
+.Agenda>footer>a{
+        color: darkgreen;
+        text-decoration: none;
+}
+@media 

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Girassol&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,500&display=swap" rel="stylesheet">
+    <title>Agenda Covid-19</title>
+</head>
+<body>
+    <div class="fondo">
+         <header>Tu agenda de seguimiento diario</header>
+         <header>Covid-19</header>
+    <div class="Agenda">
+        <header>Al menos 4 veces por dia necesitás controlarte</header><br>
+        <form action="" method="post">
+            <fieldset>
+                Fecha <input type="date" name="fecha" id="fecha"><br>
+            </fieldset>
+            <fieldset>
+                <legend>Horario</legend>
+                <select name="Horario" required><br>
+                    <option value="Mañana">Mañana</option>
+                    <option value="Mediodia">Mediodía</option>
+                    <option value="Tarde">Tarde</option>
+                    <option value="Noche">Noche</option>
+                    <input type="time" name="hora" id="hora">
+            </select>
+            </fieldset>
+            <fieldset>
+                <legend>Estado de animo</legend>
+                <input type="radio" name="Estado" id="cero">0
+                <input type="radio" name="Estado" id="uno">1
+                <input type="radio" name="Estado" id="dos">2
+                <input type="radio" name="Estado" id="tres">3
+                <input type="radio" name="Estado" id="cuatro">4
+                <input type="radio" name="Estado" id="cinco">5
+            </fieldset>
+            <fieldset>
+                <legend>Dolor de garganta</legend>
+                <input type="radio" name="Garganta" id="cero">0
+                <input type="radio" name="Garganta" id="uno">1
+                <input type="radio" name="Garganta" id="dos">2
+                <input type="radio" name="Garganta" id="tres">3
+                <input type="radio" name="Garganta" id="cuatro">4
+                <input type="radio" name="Garganta" id="cinco">5
+            </fieldset>
+            <fieldset>
+                <legend>Cansancio</legend>
+                <input type="radio" name="Cansancio" id="cero">0
+                <input type="radio" name="Cansancio" id="uno">1
+                <input type="radio" name="Cansancio" id="dos">2
+                <input type="radio" name="Cansancio" id="tres">3
+                <input type="radio" name="Cansancio" id="cuatro">4
+                <input type="radio" name="Cansancio" id="cinco">5
+            </fieldset>
+            <fieldset>
+                <legend>Dolor de pulmón</legend>
+                <input type="radio" name="Pulmon" id="cero">0
+                <input type="radio" name="Pulmon" id="uno">1
+                <input type="radio" name="Pulmon" id="dos">2
+                <input type="radio" name="Pulmon" id="tres">3
+                <input type="radio" name="Pulmon" id="cuatro">4
+                <input type="radio" name="Pulmon" id="cinco">5
+            </fieldset>
+            <fieldset>
+                <legend>Apetito</legend>
+                <input type="radio" name="Apetito" id="cero">0
+                <input type="radio" name="Apetito" id="uno">1
+                <input type="radio" name="Apetito" id="dos">2
+                <input type="radio" name="Apetito" id="tres">3
+                <input type="radio" name="Apetito" id="cuatro">4
+                <input type="radio" name="Apetito" id="cinco">5
+            </fieldset>
+            <fieldset>
+                <legend>Olfato</legend>
+                <input type="radio" name="Olfato" id="cero">0
+                <input type="radio" name="Olfato" id="uno">1
+                <input type="radio" name="Olfato" id="dos">2
+                <input type="radio" name="Olfato" id="tres">3
+                <input type="radio" name="Olfato" id="cuatro">4
+                <input type="radio" name="Olfato" id="cinco">5
+            </fieldset>
+            <fieldset>
+                <legend>Voluntad (ganas de vivir)</legend>
+                <input type="radio" name="Voluntad" id="cero">0
+                <input type="radio" name="Voluntad" id="uno">1
+                <input type="radio" name="Voluntad" id="dos">2
+                <input type="radio" name="Voluntad" id="tres">3
+                <input type="radio" name="Voluntad" id="cuatro">4
+                <input type="radio" name="Voluntad" id="cinco">5
+            </fieldset>
+            <fieldset>
+                <legend>Tos</legend>
+                <input type="radio" name="Tos" id="cero">0
+                <input type="radio" name="Tos" id="uno">1
+                <input type="radio" name="Tos" id="dos">2
+                <input type="radio" name="Tos" id="tres">3
+                <input type="radio" name="Tos" id="cuatro">4
+                <input type="radio" name="Tos" id="cinco">5
+            </fieldset>
+            <fieldset>
+                <legend>Diarrea</legend>
+                <input type="radio" name="Diarrea" id="cero">0
+                <input type="radio" name="Diarrea" id="uno">1
+                <input type="radio" name="Diarrea" id="dos">2
+                <input type="radio" name="Diarrea" id="tres">3
+                <input type="radio" name="Diarrea" id="cuatro">4
+                <input type="radio" name="Diarrea" id="cinco">5
+            </fieldset>
+            <fieldset>
+                <legend>¿Notás algún cambio?</legend>
+                <input type="radio" name="cambio" id="si">Si
+                <input type="radio" name="cambio" id="no">No
+                <br>
+                <textarea name="cambio" id="" cols="40" rows="0" disabled></textarea>
+            </fieldset>
+            <fieldset>
+                <legend>¿Lo hablaste con el doctor?</legend>
+                <input type="radio" name="hablar" id="si">Si
+                <input type="radio" name="hablar" id="no">No
+            </fieldset>
+            <fieldset>
+                <legend>¿Algún comentario o nota que desees agregar?</legend>
+                <textarea name="comentario" id="nota" cols="40" rows="0"></textarea>
+            </fieldset>
+            <fieldset>
+                <legend>Correo electrónico al que enviaremos tu nota</legend>
+                <input type="email" name="mail" id="mail">
+            </fieldset><br>
+            <input type="submit" value="Enviar y Descargar">
+        </form>
+        <br>
+        <footer>Fuente: Creado por <a href="https://www.instagram.com/merysunsr/?hl=es-la">Maria Sol Roman</a></footer>
+        <footer>Desarrollado por <a href="www.matelab.com.ar">MateLab</a></footer>
+    </div>
+    </div>
+</body>
+</html>
