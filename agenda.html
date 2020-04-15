@@ -4,137 +4,356 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <!-- Compiled and minified CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Girassol&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,500&display=swap" rel="stylesheet">
     <title>Agenda Covid-19</title>
 </head>
 <body>
     <div class="fondo">
-         <header>Tu agenda de seguimiento diario</header>
-         <header>Covid-19</header>
+         <header>
+            <div>Tu agenda de seguimiento diario</div>
+            <div>Covid-19</div>
+        </header>
     <div class="Agenda">
-        <header>Al menos 4 veces por dia necesitás controlarte</header><br>
+        <h2 class="titleForm">Al menos 4 veces por dia necesitás controlarte</h2>
         <form action="" method="post">
-            <fieldset>
-                Fecha <input type="date" name="fecha" id="fecha"><br>
+            <fieldset class="form-group fechaHora">
+                <div class="row">
+                    <legend class="textInput text-left">Fechas y hora</legend>
+                    <div class="col">
+                        <input type="date" name="fecha"  class="form-control"  id="fecha"><br>
+                    </div>          
+                    <div class="col">
+                            <input type="time"  class="form-control"  name="hora" id="hora">
+                    </div>
+                </div>
+            </fieldset>       
+            <fieldset class="form-group radioGroup">
+                <div class="row">
+                    <legend class="textInput text-left">Estado de animo</legend>
+                    <div class="col-sm-12">
+                        <label class="radioContainer">0
+                        <input type="radio" name="estado">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">1
+                        <input type="radio" name="estado">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">2
+                        <input type="radio" name="estado">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">3
+                        <input type="radio" name="estado">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">4
+                        <input type="radio" name="estado">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">5
+                        <input type="radio" name="estado">
+                        <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
             </fieldset>
-            <fieldset>
-                <legend>Horario</legend>
-                <select name="Horario" required><br>
-                    <option value="Mañana">Mañana</option>
-                    <option value="Mediodia">Mediodía</option>
-                    <option value="Tarde">Tarde</option>
-                    <option value="Noche">Noche</option>
-                    <input type="time" name="hora" id="hora">
-            </select>
+            <fieldset class="form-group radioGroup">
+                <div class="row">
+                    <legend class="textInput text-left">Dolor de garganta</legend>
+                    <div class="col-sm-12">
+                        <label class="radioContainer">0
+                        <input type="radio"  name="garganta">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">1
+                        <input type="radio" name="garganta">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">2
+                        <input type="radio" name="garganta">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">3
+                        <input type="radio" name="garganta">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">4
+                        <input type="radio" name="garganta">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">5
+                        <input type="radio" name="garganta">
+                        <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
             </fieldset>
-            <fieldset>
-                <legend>Estado de animo</legend>
-                <input type="radio" name="Estado" id="cero">0
-                <input type="radio" name="Estado" id="uno">1
-                <input type="radio" name="Estado" id="dos">2
-                <input type="radio" name="Estado" id="tres">3
-                <input type="radio" name="Estado" id="cuatro">4
-                <input type="radio" name="Estado" id="cinco">5
+             <fieldset class="form-group radioGroup">
+                <div class="row">
+                    <legend class="textInput text-left">Cansancio</legend>
+                    <div class="col-sm-12">
+                        <label class="radioContainer">0
+                        <input type="radio"  name="cansancio">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">1
+                        <input type="radio" name="cansancio">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">2
+                        <input type="radio" name="cansancio">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">3
+                        <input type="radio" name="cansancio">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">4
+                        <input type="radio" name="cansancio">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">5
+                        <input type="radio" name="cansancio">
+                        <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
             </fieldset>
-            <fieldset>
-                <legend>Dolor de garganta</legend>
-                <input type="radio" name="Garganta" id="cero">0
-                <input type="radio" name="Garganta" id="uno">1
-                <input type="radio" name="Garganta" id="dos">2
-                <input type="radio" name="Garganta" id="tres">3
-                <input type="radio" name="Garganta" id="cuatro">4
-                <input type="radio" name="Garganta" id="cinco">5
+            <fieldset class="form-group radioGroup">
+                <div class="row">
+                    <legend class="textInput text-left">Dolor de pulmón</legend>
+                    <div class="col-sm-12">
+                        <label class="radioContainer">0
+                        <input type="radio"  name="pulmon">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">1
+                        <input type="radio" name="pulmon">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">2
+                        <input type="radio" name="pulmon">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">3
+                        <input type="radio" name="pulmon">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">4
+                        <input type="radio" name="pulmon">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">5
+                        <input type="radio" name="pulmon">
+                        <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
             </fieldset>
-            <fieldset>
-                <legend>Cansancio</legend>
-                <input type="radio" name="Cansancio" id="cero">0
-                <input type="radio" name="Cansancio" id="uno">1
-                <input type="radio" name="Cansancio" id="dos">2
-                <input type="radio" name="Cansancio" id="tres">3
-                <input type="radio" name="Cansancio" id="cuatro">4
-                <input type="radio" name="Cansancio" id="cinco">5
+            <fieldset class="form-group radioGroup">
+                <div class="row">
+                    <legend class="textInput text-left">Apetito</legend>
+                    <div class="col-sm-12">
+                        <label class="radioContainer">0
+                        <input type="radio"  name="apetito">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">1
+                        <input type="radio" name="apetito">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">2
+                        <input type="radio" name="apetito">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">3
+                        <input type="radio" name="apetito">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">4
+                        <input type="radio" name="apetito">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">5
+                        <input type="radio" name="apetito">
+                        <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
             </fieldset>
-            <fieldset>
-                <legend>Dolor de pulmón</legend>
-                <input type="radio" name="Pulmon" id="cero">0
-                <input type="radio" name="Pulmon" id="uno">1
-                <input type="radio" name="Pulmon" id="dos">2
-                <input type="radio" name="Pulmon" id="tres">3
-                <input type="radio" name="Pulmon" id="cuatro">4
-                <input type="radio" name="Pulmon" id="cinco">5
+            <fieldset class="form-group radioGroup">
+                <div class="row">
+                    <legend class="textInput text-left">Olfato</legend>
+                    <div class="col-sm-12">
+                        <label class="radioContainer">0
+                        <input type="radio"  name="olfato">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">1
+                        <input type="radio" name="olfato">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">2
+                        <input type="radio" name="olfato">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">3
+                        <input type="radio" name="olfato">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">4
+                        <input type="radio" name="olfato">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">5
+                        <input type="radio" name="olfato">
+                        <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
             </fieldset>
-            <fieldset>
-                <legend>Apetito</legend>
-                <input type="radio" name="Apetito" id="cero">0
-                <input type="radio" name="Apetito" id="uno">1
-                <input type="radio" name="Apetito" id="dos">2
-                <input type="radio" name="Apetito" id="tres">3
-                <input type="radio" name="Apetito" id="cuatro">4
-                <input type="radio" name="Apetito" id="cinco">5
+            <fieldset class="form-group radioGroup">
+                <div class="row">
+                    <legend class="textInput text-left">Voluntad (ganas de vivir)</legend>
+                    <div class="col-sm-12">
+                        <label class="radioContainer">0
+                        <input type="radio"  name="voluntad">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">1
+                        <input type="radio" name="voluntad">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">2
+                        <input type="radio" name="voluntad">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">3
+                        <input type="radio" name="voluntad">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">4
+                        <input type="radio" name="voluntad">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">5
+                        <input type="radio" name="voluntad">
+                        <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
             </fieldset>
-            <fieldset>
-                <legend>Olfato</legend>
-                <input type="radio" name="Olfato" id="cero">0
-                <input type="radio" name="Olfato" id="uno">1
-                <input type="radio" name="Olfato" id="dos">2
-                <input type="radio" name="Olfato" id="tres">3
-                <input type="radio" name="Olfato" id="cuatro">4
-                <input type="radio" name="Olfato" id="cinco">5
+            <fieldset class="form-group radioGroup">
+                <div class="row">
+                    <legend class="textInput text-left">Tos</legend>
+                    <div class="col-sm-12">
+                        <label class="radioContainer">0
+                        <input type="radio"  name="tos">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">1
+                        <input type="radio" name="tos">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">2
+                        <input type="radio" name="tos">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">3
+                        <input type="radio" name="tos">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">4
+                        <input type="radio" name="tos">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">5
+                        <input type="radio" name="tos">
+                        <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
             </fieldset>
-            <fieldset>
-                <legend>Voluntad (ganas de vivir)</legend>
-                <input type="radio" name="Voluntad" id="cero">0
-                <input type="radio" name="Voluntad" id="uno">1
-                <input type="radio" name="Voluntad" id="dos">2
-                <input type="radio" name="Voluntad" id="tres">3
-                <input type="radio" name="Voluntad" id="cuatro">4
-                <input type="radio" name="Voluntad" id="cinco">5
+            <fieldset class="form-group radioGroup">
+                <div class="row">
+                    <legend class="textInput text-left">Diarrea</legend>
+                    <div class="col-sm-12">
+                        <label class="radioContainer">0
+                        <input type="radio"  name="diarrea">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">1
+                        <input type="radio" name="diarrea">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">2
+                        <input type="radio" name="diarrea">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">3
+                        <input type="radio" name="diarrea">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">4
+                        <input type="radio" name="diarrea">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">5
+                        <input type="radio" name="diarrea">
+                        <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
             </fieldset>
-            <fieldset>
-                <legend>Tos</legend>
-                <input type="radio" name="Tos" id="cero">0
-                <input type="radio" name="Tos" id="uno">1
-                <input type="radio" name="Tos" id="dos">2
-                <input type="radio" name="Tos" id="tres">3
-                <input type="radio" name="Tos" id="cuatro">4
-                <input type="radio" name="Tos" id="cinco">5
+             <fieldset class="form-group radioGroup2">
+                <div class="row">
+                    <legend>¿Notás algún cambio?</legend>
+                    <div class="col-sm-12">
+                        <label class="radioContainer">Si
+                        <input type="radio"  name="cambio">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="radioContainer">No
+                        <input type="radio" name="cambio">
+                        <span class="checkmark"></span>
+                        </label>
+                        <legend class="textInput text-left">¿Cual?</legend>
+                        <textarea name="cambio" class="form-control" cols="40" rows="0" disabled></textarea>
+                    </div>
+                </div>
             </fieldset>
-            <fieldset>
-                <legend>Diarrea</legend>
-                <input type="radio" name="Diarrea" id="cero">0
-                <input type="radio" name="Diarrea" id="uno">1
-                <input type="radio" name="Diarrea" id="dos">2
-                <input type="radio" name="Diarrea" id="tres">3
-                <input type="radio" name="Diarrea" id="cuatro">4
-                <input type="radio" name="Diarrea" id="cinco">5
+             <fieldset class="form-group radioGroup2">
+                <legend>¿Lo hablaste con el doctor?</legend>                     
+                <div class="col-sm-12">
+                    <label class="radioContainer">Si
+                    <input type="radio"  name="hablar">
+                    <span class="checkmark"></span>
+                    </label>
+                    <label class="radioContainer">No
+                    <input type="radio" name="hablar">
+                    <span class="checkmark"></span>
+                    </label>
+                </div>
             </fieldset>
-            <fieldset>
-                <legend>¿Notás algún cambio?</legend>
-                <input type="radio" name="cambio" id="si">Si
-                <input type="radio" name="cambio" id="no">No
-                <br>
-                <textarea name="cambio" id="" cols="40" rows="0" disabled></textarea>
-            </fieldset>
-            <fieldset>
-                <legend>¿Lo hablaste con el doctor?</legend>
-                <input type="radio" name="hablar" id="si">Si
-                <input type="radio" name="hablar" id="no">No
-            </fieldset>
-            <fieldset>
+            <fieldset class="form-group radioGroup2">
                 <legend>¿Algún comentario o nota que desees agregar?</legend>
-                <textarea name="comentario" id="nota" cols="40" rows="0"></textarea>
+                <textarea name="comentario" class="form-control" id="nota" cols="40" rows="0"></textarea>
             </fieldset>
             <fieldset>
-                <legend>Correo electrónico al que enviaremos tu nota</legend>
-                <input type="email" name="mail" id="mail">
-            </fieldset><br>
-            <input type="submit" value="Enviar y Descargar">
-        </form>
-        <br>
-        <footer>Fuente: Creado por <a href="https://www.instagram.com/merysunsr/?hl=es-la">Maria Sol Roman</a></footer>
-        <footer>Desarrollado por <a href="www.matelab.com.ar">MateLab</a></footer>
+                <legend>Dejanos tu email al que enviaremos tu nota</legend>
+                <input type="email" class="form-control" name="mail" id="mail">
+            </fieldset> 
+                <input type="submit" class="btn btn-primary btnForm" value="Enviar y Descargar">
+        </form>    
     </div>
+        <footer>
+            <div>Fuente: Creado por <a href="https://www.instagram.com/merysunsr/?hl=es-la">Maria Sol Roman</a></div>
+            <div>Desarrollado por <a href="www.matelab.com.ar">MateLab</a></div>
+        </footer>
     </div>
 </body>
 </html>
