@@ -5,22 +5,25 @@
 use App\Model;
 use Faker\Generator as Faker;
 use App\HistorySymptom;
+use App\User;
 
 $factory->define(HistorySymptom::class, function (Faker $faker) {
+    /**Obtenemos Todos los Usuarios */
+    $user=User::all();
     return [
-
-            'temperature'=> $faker->randomNumber(5),
-            'oxygen_saturation'=>$faker->randomNumber(5),
-            'heart_rate'=>$faker->randomNumber(5),
-            'mood'=>$faker->randomNumber(5),
-            'sore_throat'=>$faker->randomNumber(5),
-            'fatigue'=>$faker->randomNumber(5),
-            'lung_pain'=>$faker->randomNumber(5),
-            'smell'=>$faker->randomNumber(5),
-            'cough'=>$faker->randomNumber(5),
+            'temperature'=> $faker->randomFloat(2,1,50),
+            'oxygen_saturation'=>$faker->randomFloat(2,1,50),
+            'heart_rate'=>$faker->numberBetween(1,5),
+            'mood'=>$faker->numberBetween(1,5),
+            'sore_throat'=>$faker->numberBetween(1,5),
+            'fatigue'=>$faker->numberBetween(1,5),
+            'lung_pain'=>$faker->numberBetween(1,5),
+            'smell'=>$faker->numberBetween(1,5),
+            'cough'=>$faker->numberBetween(1,5),
             'changes'=>$faker->text,
             'talk_doctor'=>$faker->text,
             'created_at'=>$faker->dateTime(),
-            'user_id'=>1
+            /**Relacionamos el Primer Usuario de la Lista Con el Historial */
+            'user_id'=>$user->first()->id,
     ];
 });

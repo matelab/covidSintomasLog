@@ -2,8 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
-use App\HistorySymptom;
-use Carbon\Carbon;
+
 
 class UsersTableSeeder extends Seeder
 {
@@ -14,7 +13,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-
+        /**Creamos un Usuario por Defecto */
         User::create
         ([
         'name'=>'MateLab',
@@ -23,6 +22,5 @@ class UsersTableSeeder extends Seeder
         'password'=> bcrypt('12345678')
         ]);
 
-        factory(HistorySymptom::class, 20)->create();
     }
 }
