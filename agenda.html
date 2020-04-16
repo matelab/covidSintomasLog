@@ -409,7 +409,7 @@
             </fieldset>
             <fieldset>
                 <legend>Dejanos tu email al que enviaremos tu nota</legend>
-                <input type="email" class="form-control" name="mail" id="emailPaciente">
+                <input type="email" class="form-control" name="mail" id="emailPaciente" onkeyup="validarEmail()">
             </fieldset> 
                 <input type="submit" class="btn btn-primary btnForm" value="Enviar y Descargar">
         </form>    
@@ -433,7 +433,7 @@
             document.getElementById("emailPaciente").style = "border:2px solid red;"
         }
     }
-    var radioButtonType = ["fiebre","staturacion","estado", "garganta", "cansancio", "pulmon", "apetito", "olfato", "voluntad",
+    var radioButtonType = ["fiebre","saturacion","estado", "garganta", "cansancio", "pulmon", "apetito", "olfato", "voluntad",
      "tos", "diarrea", "cambio", "hablar"]
 
     document.getElementById("formulario").addEventListener("submit", function(event){
@@ -450,6 +450,7 @@
         }
          if(!isValidEmail(emailPaciente)){
               alert('Falta completar email valido ');
+               event.preventDefault();
         }
         
         // si hay algún error no efectuamos la acción submit del form
