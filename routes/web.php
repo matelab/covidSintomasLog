@@ -13,8 +13,15 @@
 
 Auth::routes(['verify' => true]);
 
+Route::get('/', function(){
+    if(Auth::check()){
+        return view('home');
+    }else {
+        return view('auth.login');
+    }
+});
+
 Route::middleware(['auth','verified'])->group(function () {
-    Route::get('/', 'HomeController@index');
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/sintomas', 'HistorySymptomController@index')->name('sintomas');
     Route::get('/sintomas/create', 'HistorySymptomController@create')->name('sintomasCreate');
