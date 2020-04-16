@@ -16,7 +16,7 @@
         </header>
     <div class="Agenda">
         <h2 class="titleForm">Al menos 4 veces por dia necesitás controlarte</h2>
-        <form action="" method="post">
+        <form id="formulario" action="" method="post">
             <fieldset class="form-group fechaHora">
                 <div class="row">
                     <legend class="textInput text-left">Fechas y hora</legend>
@@ -30,26 +30,26 @@
             </fieldset>
             <fieldset class="form-group radioGroup">
                 <div class="row">
-                    <legend class="textInput text-left">Nivel de temperatura</legend>
+                    <legend class="textInput text-left">Fiebre</legend>
                     <div class="col-sm-12">
-                        <label class="radioContainer">36
-                        <input type="radio" name="temperatura">
+                        <label class="radioContainer">36°
+                        <input type="radio" name="fiebre">
                         <span class="checkmark"></span>
                         </label>
-                        <label class="radioContainer">37
-                        <input type="radio" name="temperatura">
+                        <label class="radioContainer">37°
+                        <input type="radio" name="fiebre">
                         <span class="checkmark"></span>
                         </label>
-                        <label class="radioContainer">38
-                        <input type="radio" name="temperatura">
+                        <label class="radioContainer">38°
+                        <input type="radio" name="fiebre">
                         <span class="checkmark"></span>
                         </label>
-                        <label class="radioContainer">39
-                        <input type="radio" name="temperatura">
+                        <label class="radioContainer">39°
+                        <input type="radio" name="fiebre">
                         <span class="checkmark"></span>
                         </label>
-                        <label class="radioContainer">+39
-                        <input type="radio" name="temperatura">
+                        <label class="radioContainer">+39°
+                        <input type="radio" name="fiebre">
                         <span class="checkmark"></span>
                         </label>
                     </div>
@@ -420,4 +420,40 @@
         </footer>
     </div>
 </body>
+<script>
+    function isValidEmail(mail) { 
+        return /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(mail); 
+    }
+  
+    function validarEmail() {
+        var email = document.getElementById("emailPaciente").value;
+        if(isValidEmail(email)){ 
+            document.getElementById("emailPaciente").style = "border:2px solid green;"
+        } else {
+            document.getElementById("emailPaciente").style = "border:2px solid red;"
+        }
+    }
+    var radioButtonType = ["fiebre","staturacion","estado", "garganta", "cansancio", "pulmon", "apetito", "olfato", "voluntad",
+     "tos", "diarrea", "cambio", "hablar"]
+
+    document.getElementById("formulario").addEventListener("submit", function(event){
+    
+        let hasError = false;
+        for(var i = 0; i<radioButtonType.length; i++){
+            if(!document.querySelector('input[name=' + radioButtonType[i] + ' ]:checked')) {
+                alert('Falta completar tu ' + radioButtonType[i]);
+                hasError = true;
+                event.preventDefault();
+                break;
+            }
+        }
+ 
+        
+        // si hay algún error no efectuamos la acción submit del form
+        if(hasError) event.preventDefault();
+    });
+
+
+
+</script>
 </html>
