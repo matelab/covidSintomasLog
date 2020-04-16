@@ -12,7 +12,7 @@
 <body>
     <div class="fondo">
          <header>
-            <div><u>Mi agenda de seguimiento diario</u></div>
+            <h1>Mi agenda de seguimiento diario</h1>
         </header>
     <div class="Agenda">
         <h2 class="titleForm">Al menos 4 veces por dia necesitás controlarte</h2>
@@ -378,15 +378,15 @@
                     <legend>¿Notás algún cambio?</legend>
                     <div class="col-sm-12">
                         <label class="radioContainer">Si
-                        <input type="radio"  name="cambio">
+                        <input id="test" type="radio"  name="cambio" onchange='handleChange(this);'>
                         <span class="checkmark"></span>
                         </label>
                         <label class="radioContainer">No
-                        <input type="radio" name="cambio">
+                        <input type="radio" name="cambio" onchange='handleChangeNot(this);'>
                         <span class="checkmark"></span>
                         </label>
                         <legend class="textInput text-left">¿Cual?</legend>
-                        <textarea name="cambio" class="form-control" cols="40" rows="0" disabled></textarea>
+                        <textarea id="textComment" class="form-control" cols="40" rows="0" disabled='disabled'></textarea>
                     </div>
                 </div>
             </fieldset>
@@ -433,6 +433,24 @@
             document.getElementById("emailPaciente").style = "border:2px solid red;"
         }
     }
+   
+    
+    function handleChange(checkbox) {
+        if(checkbox.checked == true){
+            document.getElementById('textComment').disabled = false;
+        }else if(checkbox.checked == false){
+            document.getElementById('textComment').disabled = true;
+        }
+    }
+    function handleChangeNot(checkbox) {
+        if(checkbox.checked == true){
+            document.getElementById('textComment').disabled = true;
+        }else if(checkbox.checked == false){
+            document.getElementById('textComment').disabled = false;
+        }
+    }
+
+
     var radioButtonType = ["fiebre","saturacion","estado", "garganta", "cansancio", "pulmon", "apetito", "olfato", "voluntad",
      "tos", "diarrea", "cambio", "hablar"]
 
