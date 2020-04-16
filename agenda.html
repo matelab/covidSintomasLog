@@ -409,7 +409,7 @@
             </fieldset>
             <fieldset>
                 <legend>Dejanos tu email al que enviaremos tu nota</legend>
-                <input type="email" class="form-control" name="mail" id="mail">
+                <input type="email" class="form-control" name="mail" id="emailPaciente">
             </fieldset> 
                 <input type="submit" class="btn btn-primary btnForm" value="Enviar y Descargar">
         </form>    
@@ -439,18 +439,23 @@
     document.getElementById("formulario").addEventListener("submit", function(event){
     
         let hasError = false;
+        var emailPaciente = document.getElementById("emailPaciente").value;
+
         for(var i = 0; i<radioButtonType.length; i++){
             if(!document.querySelector('input[name=' + radioButtonType[i] + ' ]:checked')) {
                 alert('Falta completar tu ' + radioButtonType[i]);
                 hasError = true;
-                event.preventDefault();
-                break;
+                 break;
             }
         }
- 
+         if(!isValidEmail(emailPaciente)){
+              alert('Falta completar email valido ');
+        }
         
         // si hay algún error no efectuamos la acción submit del form
-        if(hasError) event.preventDefault();
+        if(hasError){
+            event.preventDefault();
+        } 
     });
 
 
