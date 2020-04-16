@@ -43,7 +43,7 @@
   top: 0px;
 }
 .fondo>header{
-  font-family: 'Fira Sans', sans-serif;
+  font-family: 'Walter Turncoat', cursive;
   text-align: center;
   font-size: 30pt;
   color: #fff;
@@ -51,7 +51,7 @@
   z-index:2;
 }
 .Agenda>form>fieldset{
-  font-family: 'Fira Sans', sans-serif;
+  font-family: 'Walter Turncoat', cursive;
 }
 .Agenda>footer>a{
       color: darkgreen;
