@@ -1,6 +1,6 @@
 .Agenda{
   margin: 0 auto;
-  max-width: 650px;
+  max-width: 540px; /*Original 650px*/
   text-align: center;
   background-color: rgba(255, 255, 255, 0.93);
   padding: 11px 17px;
