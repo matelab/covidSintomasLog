@@ -586,9 +586,7 @@
             document.getElementById('textComment').disabled = false;
         }
     }
-$(document).ready(function(){
-       
-       function isValidEmail(mail) { 
+    function isValidEmail(mail) { 
             return /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(mail); 
         }
   
@@ -600,17 +598,16 @@ $(document).ready(function(){
                 document.getElementById("emailPaciente").style = "border:2px solid red;"
             }
         }
+$(document).ready(function(){
+       
+       
 
     var radioButtonType = ["fiebre","saturacion","estado", "garganta", "cansancio", "pulmon", "apetito", "olfato", "voluntad",
     "tos", "diarrea", "cambio", "hablar"]
 
-         //console.log("sfdsfdsd " + radioButtonType[x])        
-         $('input[type=radio]').change(function(){
-            //console.log("sfdsfdsd " + typeof(radioButtonType))
-             
-             $(this).parent().parent().parent().removeClass("active")
-             
-         });
+    $('input[type=radio]').change(function(){             
+        $(this).parent().parent().parent().removeClass("active")
+    });
      
     document.getElementById("formulario").addEventListener("submit", function(event){
     
@@ -618,18 +615,14 @@ $(document).ready(function(){
         var emailPaciente = document.getElementById("emailPaciente").value;
 
         for(var i = 0; i<radioButtonType.length; i++){
-            //console.log(radioButtonType[i])
             if(!document.querySelector('input[name=' + radioButtonType[i] + ' ]:checked')) {
-               // console.log(radioButtonType[i])
                  $('.' + radioButtonType[i]).parent().addClass('active');
-                  hasError = true;
-                 
+                  hasError = true;  
             }else{
                 $('.' + radioButtonType[i]).removeClass('active');
             }
         }
          if(!isValidEmail(emailPaciente)){
-              //alert('Falta completar email valido ');
                event.preventDefault();
         }
         
