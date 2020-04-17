@@ -23,10 +23,16 @@
   margin: 0px;
 }
 .active .textInput{
-  border-bottom:2px solid red;
+  border-bottom:1px solid red;
   color:red;
   font-weight:bold;
 }
+.active .textInputBig{
+  color:red;
+}
+.radioGroup .active .col-sm-12 {
+  background-color: #ffa7a7;
+ }
 .btnForm{
   margin:10px auto;
   background-color:#159e4a !important;
