@@ -19,9 +19,11 @@
         <form id="formulario" action="" method="post">
             <fieldset class="form-group fechaHora">
                 <div class="row">
-                    <legend class="textInput text-left">Fechas y hora</legend>
+                    <legend class="textInput text-left">Fechas y hora  
+                        <span class="errorDate">Fecha invalida</span>
+                    </legend>
                     <div class="col">
-                        <input type="date" name="fecha"  class="form-control"  id="fecha"><br>
+                        <input type="text" name="fecha"  class="form-control"  id="fecha"><br>
                     </div>          
                     <div class="col">
                             <input type="time"  class="form-control"  name="hora" id="hora">
@@ -563,7 +565,11 @@
                 Falta completar campos
             </div>
                 <input type="submit" class="btn btn-primary btnForm" value="Enviar y Descargar">
-        </form>    
+        </form> 
+        <p></p> 
+        <!-- HTML -->
+<div id="fecha"></div>
+<pre id="salida"></pre>  
     </div>
         <footer>
             <div>Fuente: Creado por <a href="https://www.instagram.com/merysunsr/?hl=es-la">Marisol San Roman</a></div>
@@ -571,7 +577,13 @@
         </footer>
     </div>
 </body>
-<script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/i18n/jquery-ui-i18n.min.js"></script>
+
+
+
 <script>
 
 
@@ -601,9 +613,62 @@
                 document.getElementById("emailPaciente").style = "border:1px solid red;"
             }
         }
-$(document).ready(function(){
+
+        
+            
        
-       
+        
+        
+        
+    $(document).ready(function(){
+            
+        $(function() { 
+            $.datepicker.setDefaults(
+                $.datepicker.regional["es"]
+                );
+                let opciones = {
+                dateFormat: "dd/mm/yy",
+                yearRange: "1500:",
+                maxDate: "2w",
+                defaultDate: 0,
+                constrainInput: true,
+                autoSize: true,
+                appendText: "(d/m/aaaa)",
+                showAnim: "slideDown",
+                numberOfMonths: 1,
+                showButtonPanel: true,
+                changeMonth: true,
+                changeYear: true,
+                showMonthAfterYear: false,
+                firstDay: 0,
+                showWeek: false,
+                onSelect: validarFecha
+                };
+                //Inicializar el Datepicker
+                let datepicker = $('#fecha').datepicker(opciones);
+                //Evento cuando se cambia
+                $("#fecha").on("input", validarFecha);
+            });
+
+
+            //Validar la fecha cuando cambia el valor de la fecha
+            //Disparado input.on("input") y datepicker.onSelect
+            function validarFecha() {
+                try {
+                    //Si es inválida dispara el error
+                    let fecha = $.datepicker.parseDate("dd/mm/yy", $("#fecha").val());
+                    // mostrar la fecha válida fechaHora
+                    $(".errorDate").removeClass("fechaInvalida");
+                    $(".fechaHora").removeClass("Invalida");
+                    return false
+                } catch (err) {
+                    // mostrar error
+                    $(".errorDate").addClass("fechaInvalida");
+                    $(".fechaHora").addClass("invalida");
+                    return true
+                }
+            }
+
 
     var radioButtonType = ["fiebre","saturacion","estado", "garganta", "cansancio", "pulmon", "apetito", "olfato", "voluntad",
     "tos", "diarrea", "cambio", "hablar"]
@@ -626,10 +691,13 @@ $(document).ready(function(){
             }
         }
          if(!isValidEmail(emailPaciente)){
-                document.getElementById("emailPaciente").style = "border:1px solid red;"
-               event.preventDefault();
+            document.getElementById("emailPaciente").style = "border:1px solid red;"
+            event.preventDefault();
         }
-        
+        if(validarFecha()){
+            event.preventDefault();
+        }
+
         // si hay algún error no efectuamos la acción submit del form
         if(hasError){
             $(".alertBox").addClass("activeBox");

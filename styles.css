@@ -9,6 +9,15 @@
   position:relative;
   z-index:2;
 }
+.errorDate{
+  display: none;
+}
+.errorDate.fechaInvalida{
+  display: inline-block;
+}
+.invalida, .invalida .textInput{
+  color: red;
+}
 .titleForm{
   color: #5f5f5f;
   font-weight: 700;
