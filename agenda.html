@@ -600,21 +600,18 @@ $(document).ready(function(){
                 document.getElementById("emailPaciente").style = "border:2px solid red;"
             }
         }
-    
-        
-      
 
+    var radioButtonType = ["fiebre","saturacion","estado", "garganta", "cansancio", "pulmon", "apetito", "olfato", "voluntad",
+    "tos", "diarrea", "cambio", "hablar"]
 
-
-        var radioButtonType = ["fiebre","saturacion","estado", "garganta", "cansancio", "pulmon", "apetito", "olfato", "voluntad",
-        "tos", "diarrea", "cambio", "hablar"]
-
-    for(var x = 0; x < radioButtonType.length; x++){    
-             console.log("sfdsfdsd " + radioButtonType[x])
-        $('input[name=' + radioButtonType[x] + ']').click(function(){
-              $('.'+ radioButtonType[x]).removeClass('active');
-         })     
-     }
+         //console.log("sfdsfdsd " + radioButtonType[x])        
+         $('input[type=radio]').change(function(){
+            //console.log("sfdsfdsd " + typeof(radioButtonType))
+             
+             $(this).parent().parent().parent().removeClass("active")
+             
+         });
+     
     document.getElementById("formulario").addEventListener("submit", function(event){
     
         let hasError = false;
@@ -623,8 +620,8 @@ $(document).ready(function(){
         for(var i = 0; i<radioButtonType.length; i++){
             //console.log(radioButtonType[i])
             if(!document.querySelector('input[name=' + radioButtonType[i] + ' ]:checked')) {
-                console.log(radioButtonType[i])
-                 $('.' + radioButtonType[i]).addClass('active');
+               // console.log(radioButtonType[i])
+                 $('.' + radioButtonType[i]).parent().addClass('active');
                   hasError = true;
                  
             }else{
