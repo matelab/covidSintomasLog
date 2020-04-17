@@ -559,6 +559,9 @@
                 <legend class="textInputBIg">Dejanos tu email al que enviaremos tu nota</legend>
                 <input type="email" class="form-control" name="mail" id="emailPaciente" onkeyup="validarEmail()">
             </fieldset> 
+            <div class="alert alert-danger alertBox" role="alert">
+                Falta completar campos
+            </div>
                 <input type="submit" class="btn btn-primary btnForm" value="Enviar y Descargar">
         </form>    
     </div>
@@ -593,9 +596,9 @@
         function validarEmail() {
             var email = document.getElementById("emailPaciente").value;
             if(isValidEmail(email)){ 
-                document.getElementById("emailPaciente").style = "border:2px solid green;"
+                document.getElementById("emailPaciente").style = "border:1px solid green;"
             } else {
-                document.getElementById("emailPaciente").style = "border:2px solid red;"
+                document.getElementById("emailPaciente").style = "border:1px solid red;"
             }
         }
 $(document).ready(function(){
@@ -623,11 +626,13 @@ $(document).ready(function(){
             }
         }
          if(!isValidEmail(emailPaciente)){
+                document.getElementById("emailPaciente").style = "border:1px solid red;"
                event.preventDefault();
         }
         
         // si hay algún error no efectuamos la acción submit del form
         if(hasError){
+            $(".alertBox").addClass("activeBox");
             event.preventDefault();
         } 
     }); 
