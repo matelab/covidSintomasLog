@@ -30,7 +30,7 @@
             </fieldset>
             <fieldset class="form-group radioGroup">
                 <div class="row">
-                    <legend class="textInput text-left">Fiebre</legend>
+                    <legend class="textInput text-left fiebre">Fiebre</legend>
                     <div class="col-sm-12">
                         <label class="radioContainer">36°
                         <input type="radio" name="fiebre">
@@ -57,7 +57,7 @@
             </fieldset>
             <fieldset class="form-group radioGroup">
                 <div class="row">
-                    <legend class="textInput text-left">Saturación de oxigeno</legend>
+                    <legend class="textInput text-left saturacion">Saturación de oxigeno</legend>
                     <div class="col-sm-12">
                         <label class="radioContainer">92
                             <input type="radio" name="saturacion">
@@ -100,7 +100,7 @@
             </fieldset>  
             <fieldset class="form-group radioGroup">
                 <div class="row">
-                    <legend class="textInput text-left">Estado de animo</legend>
+                    <legend class="textInput text-left estado">Estado de animo</legend>
                     <div class="col-sm-12">
                         <label class="radioContainer">1
                         <input type="radio" name="estado">
@@ -147,7 +147,7 @@
             </fieldset>
             <fieldset class="form-group radioGroup">
                 <div class="row">
-                    <legend class="textInput text-left">Dolor de garganta</legend>
+                    <legend class="textInput text-left garganta">Dolor de garganta</legend>
                     <div class="col-sm-12">
                         <label class="radioContainer">1
                         <input type="radio" name="garganta">
@@ -194,7 +194,7 @@
             </fieldset>
              <fieldset class="form-group radioGroup">
                 <div class="row">
-                    <legend class="textInput text-left">Cansancio</legend>
+                    <legend class="textInput text-left cansancio">Cansancio</legend>
                     <div class="col-sm-12">
                         <label class="radioContainer">1
                         <input type="radio" name="cansancio">
@@ -241,7 +241,7 @@
             </fieldset>
             <fieldset class="form-group radioGroup">
                 <div class="row">
-                    <legend class="textInput text-left">Dolor de pulmón</legend>
+                    <legend class="textInput text-left pulmon">Dolor de pulmón</legend>
                     <div class="col-sm-12">
                         <label class="radioContainer">1
                         <input type="radio" name="pulmon">
@@ -288,7 +288,7 @@
             </fieldset>
             <fieldset class="form-group radioGroup">
                 <div class="row">
-                    <legend class="textInput text-left">Apetito</legend>
+                    <legend class="textInput text-left apetito">Apetito</legend>
                     <div class="col-sm-12">
                         <label class="radioContainer">1
                         <input type="radio" name="apetito">
@@ -335,7 +335,7 @@
             </fieldset>
             <fieldset class="form-group radioGroup">
                 <div class="row">
-                    <legend class="textInput text-left">Olfato</legend>
+                    <legend class="textInput text-left olfato">Olfato</legend>
                     <div class="col-sm-12">
                         <label class="radioContainer">1
                         <input type="radio" name="olfato">
@@ -382,7 +382,7 @@
             </fieldset>
             <fieldset class="form-group radioGroup">
                 <div class="row">
-                    <legend class="textInput text-left">Voluntad (¡Ganas de ganar!)</legend>
+                    <legend class="textInput text-left voluntad">Voluntad (¡Ganas de ganar!)</legend>
                     <div class="col-sm-12">
                         <label class="radioContainer">1
                         <input type="radio" name="voluntad">
@@ -429,7 +429,7 @@
             </fieldset>
             <fieldset class="form-group radioGroup">
                 <div class="row">
-                    <legend class="textInput text-left">Tos</legend>
+                    <legend class="textInput text-left tos">Tos</legend>
                     <div class="col-sm-12">
                         <label class="radioContainer">1
                         <input type="radio" name="tos">
@@ -476,7 +476,7 @@
             </fieldset>
             <fieldset class="form-group radioGroup">
                 <div class="row">
-                    <legend class="textInput text-left">Diarrea</legend>
+                    <legend class="textInput text-left diarrea">Diarrea</legend>
                     <div class="col-sm-12">
                         <label class="radioContainer">1
                         <input type="radio" name="diarrea">
@@ -523,7 +523,7 @@
             </fieldset>
              <fieldset class="form-group radioGroup2">
                 <div class="row">
-                    <legend>¿Notás algún cambio?</legend>
+                    <legend class="cambio">¿Notás algún cambio?</legend>
                     <div class="col-sm-12">
                         <label class="radioContainer">Si
                         <input id="test" type="radio"  name="cambio" onchange='handleChange(this);'>
@@ -539,7 +539,7 @@
                 </div>
             </fieldset>
              <fieldset class="form-group radioGroup2">
-                <legend>¿Lo hablaste con el doctor?</legend>                     
+                <legend class="hablar">¿Lo hablaste con el doctor?</legend>                     
                 <div class="col-sm-12">
                     <label class="radioContainer">Si
                     <input type="radio"  name="hablar">
@@ -568,22 +568,11 @@
         </footer>
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 <script>
-    function isValidEmail(mail) { 
-        return /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(mail); 
-    }
-  
-    function validarEmail() {
-        var email = document.getElementById("emailPaciente").value;
-        if(isValidEmail(email)){ 
-            document.getElementById("emailPaciente").style = "border:2px solid green;"
-        } else {
-            document.getElementById("emailPaciente").style = "border:2px solid red;"
-        }
-    }
-   
-    
-    function handleChange(checkbox) {
+
+
+  function handleChange(checkbox) {
         if(checkbox.checked == true){
             document.getElementById('textComment').disabled = false;
         }else if(checkbox.checked == false){
@@ -597,25 +586,53 @@
             document.getElementById('textComment').disabled = false;
         }
     }
+$(document).ready(function(){
+       
+       function isValidEmail(mail) { 
+            return /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(mail); 
+        }
+  
+        function validarEmail() {
+            var email = document.getElementById("emailPaciente").value;
+            if(isValidEmail(email)){ 
+                document.getElementById("emailPaciente").style = "border:2px solid green;"
+            } else {
+                document.getElementById("emailPaciente").style = "border:2px solid red;"
+            }
+        }
+    
+        
+      
 
 
-    var radioButtonType = ["fiebre","saturacion","estado", "garganta", "cansancio", "pulmon", "apetito", "olfato", "voluntad",
-     "tos", "diarrea", "cambio", "hablar"]
 
+        var radioButtonType = ["fiebre","saturacion","estado", "garganta", "cansancio", "pulmon", "apetito", "olfato", "voluntad",
+        "tos", "diarrea", "cambio", "hablar"]
+
+    for(var x = 0; x < radioButtonType.length; x++){    
+             console.log("sfdsfdsd " + radioButtonType[x])
+        $('input[name=' + radioButtonType[x] + ']').click(function(){
+              $('.'+ radioButtonType[x]).removeClass('active');
+         })     
+     }
     document.getElementById("formulario").addEventListener("submit", function(event){
     
         let hasError = false;
         var emailPaciente = document.getElementById("emailPaciente").value;
 
         for(var i = 0; i<radioButtonType.length; i++){
+            //console.log(radioButtonType[i])
             if(!document.querySelector('input[name=' + radioButtonType[i] + ' ]:checked')) {
-                alert('Falta completar tu ' + radioButtonType[i]);
-                hasError = true;
-                 break;
+                console.log(radioButtonType[i])
+                 $('.' + radioButtonType[i]).addClass('active');
+                  hasError = true;
+                 
+            }else{
+                $('.' + radioButtonType[i]).removeClass('active');
             }
         }
          if(!isValidEmail(emailPaciente)){
-              alert('Falta completar email valido ');
+              //alert('Falta completar email valido ');
                event.preventDefault();
         }
         
@@ -623,8 +640,12 @@
         if(hasError){
             event.preventDefault();
         } 
-    });
+    }); 
+     
 
+})
+   
+    
 
 
 </script>
