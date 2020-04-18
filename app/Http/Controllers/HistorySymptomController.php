@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\HistorySymptoms;
 use Illuminate\Http\Request;
 
-class HistorySymptomsController extends Controller
+use App\HistorySymptom;
+
+class HistorySymptomController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,9 @@ class HistorySymptomsController extends Controller
      */
     public function index()
     {
-        //
+        /**Obtenemos Todos los Tratamientos del Usuario */
+        $historySymptoms = auth()->user()->historySymptoms()->paginate(15);
+        return view('tratamientos.index')->with(compact('historySymptoms'));
     }
 
     /**
@@ -41,10 +44,10 @@ class HistorySymptomsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\HistorySymptoms  $historySymptoms
+     * @param  \App\HistorySymptom  $historySymptoms
      * @return \Illuminate\Http\Response
      */
-    public function show(HistorySymptoms $historySymptoms)
+    public function show(HistorySymptom $historySymptoms)
     {
         //
     }
@@ -52,10 +55,10 @@ class HistorySymptomsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\HistorySymptoms  $historySymptoms
+     * @param  \App\HistorySymptom  $historySymptom
      * @return \Illuminate\Http\Response
      */
-    public function edit(HistorySymptoms $historySymptoms)
+    public function edit(HistorySymptom $historySymptom)
     {
         //
     }
@@ -64,10 +67,10 @@ class HistorySymptomsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\HistorySymptoms  $historySymptoms
+     * @param  \App\HistorySymptom  $historySymptom
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, HistorySymptoms $historySymptoms)
+    public function update(Request $request, HistorySymptom $historySymptom)
     {
         //
     }
@@ -75,10 +78,10 @@ class HistorySymptomsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\HistorySymptoms  $historySymptoms
+     * @param  \App\HistorySymptom  $historySymptom
      * @return \Illuminate\Http\Response
      */
-    public function destroy(HistorySymptoms $historySymptoms)
+    public function destroy(HistorySymptom $historySymptom)
     {
         //
     }

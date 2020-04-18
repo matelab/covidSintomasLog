@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','Historial de Sintomas')
+@section('title','Historial de Tratamientos')
 
 @section('content')
 <div class="container">
@@ -19,26 +19,34 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Fecha y Hora</th>
-                                <th scope="col">Temperatura </th>
-                                <th scope="col">Saturación de Oxigeno</th>
+                                <th scope="col">Inicio de Tratmiento</th>
+                                <th scope="col">Final de Tratmiento</th>
+                                <th scope="col">Estado</th>
                                 <th scope="col">Opciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($symptoms as $key => $symptom)
+                            @foreach($historySymptoms as $key => $historySymptom)
                                 <tr>
                                     <th scope="row">{{ $key + 1}}</th>
-                                    <td>{{ $symptom->created_at }}</td>
-                                    <td>{{ $symptom->temperature }}</td>
-                                    <td>{{ $symptom->oxygen_saturation }}</td>
-                                    <td>Ver Editar Eliminar</td>
+                                    <td>{{ $historySymptom->created_at }}</td>
+                                    <td>{{ $historySymptom->finished_date }}</td>
+                                    <td>@switch ($historySymptom->status)
+                                            @case('Active')
+                                                En Tratamiento
+                                            @break
+                                            @case('Finished')
+                                                Tratmineto Finalizado
+                                            @break
+                                        @endswitch
+                                    </td>
+                                    <td>Ver</td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
                     <nav class="justify-content-center">
-                        {{ $symptoms->links()}}
+                        {{ $historySymptoms->links()}}
                     </nav>
                 </div>
             </div>

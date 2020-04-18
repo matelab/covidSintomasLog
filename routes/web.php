@@ -23,6 +23,7 @@ Route::get('/', function(){
 
 Route::middleware(['auth','verified'])->group(function () {
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/tratamientos', 'HistorySymptomController@index')->name('tratamientos');
     Route::get('/sintomas', 'HistorySymptomDetailsController@index')->name('sintomas');
     Route::get('/sintomas/create', 'HistorySymptomDetailsController@create')->name('sintomasCreate');
 });
