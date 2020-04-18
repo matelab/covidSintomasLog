@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\HistorySymptom;
+use App\HistorySymptomDetail;
 
-class HistorySymptomTable extends Seeder
+class HistorySymptomDetailsTable extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +12,6 @@ class HistorySymptomTable extends Seeder
      */
     public function run()
     {
-        factory(HistorySymptom::class, 20)->create();
+        factory(HistorySymptomDetail::class, 20)->create();
     }
 }

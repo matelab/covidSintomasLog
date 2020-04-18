@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateHistorySymptomsDetailsTable extends Migration
+class CreateHistorySymptomDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,24 +13,29 @@ class CreateHistorySymptomsDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('history_symptoms_details', function (Blueprint $table) {
+        Schema::create('history_symptom_details', function (Blueprint $table) {
             $table->bigIncrements('id');
+
+            //FK Historial de Síntomas (Tratamientos Activos) a Detalle del Historial de Síntomas
+            $table->unsignedBigInteger('history_symptom_id');
+            $table->foreign('history_symptom_id')->references('id')->on('history_symptoms');
 
             $table->float('temperature');
             $table->float('oxygen_saturation');
-            $table->integer('heart_rate');
             $table->integer('mood');
             $table->integer('sore_throat');
             $table->integer('fatigue');
             $table->integer('lung_pain');
+            $table->integer('Appetite');
             $table->integer('smell');
+            $table->integer('will');
             $table->integer('cough');
-            $table->text('changes')->nullable();
-            $table->text('talk_doctor')->nullable();
+            $table->integer('diarrhea');
 
-            //FK user_id->Personas o Usuarios
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->text('changes')->nullable();
+            $table->boolean('talk_doctor')->nullable()->default(false);
+            $table->text('commentary')->nullable();
+
             $table->timestamps();
         });
     }
@@ -42,6 +47,6 @@ class CreateHistorySymptomsDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('history_symptoms_details');
+        Schema::dropIfExists('history_symptom_details');
     }
 }

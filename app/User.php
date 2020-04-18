@@ -40,6 +40,6 @@ class User extends Authenticatable implements MustVerifyEmail
     public function symptoms()
     {
         /**Un Usuario Muchos Symptom */
-        return $this->hasMany(HistorySymptomDetails::class);
+        return $this->hasMany(HistorySymptom::class);
     }
 }
