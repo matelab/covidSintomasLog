@@ -19,8 +19,8 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Inicio de Tratmiento</th>
-                                <th scope="col">Final de Tratmiento</th>
+                                <th scope="col">Inicio de Tratamiento</th>
+                                <th scope="col">Final de Tratamiento</th>
                                 <th scope="col">Estado</th>
                                 <th scope="col">Opciones</th>
                             </tr>
@@ -36,7 +36,7 @@
                                                 En Tratamiento
                                             @break
                                             @case('Finished')
-                                                Tratmineto Finalizado
+                                                Tratamiento Finalizado
                                             @break
                                         @endswitch
                                     </td>
