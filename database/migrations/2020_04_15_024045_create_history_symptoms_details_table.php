@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateHistorySymptomsTable extends Migration
+class CreateHistorySymptomsDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateHistorySymptomsTable extends Migration
      */
     public function up()
     {
-        Schema::create('history_symptoms', function (Blueprint $table) {
+        Schema::create('history_symptoms_details', function (Blueprint $table) {
             $table->bigIncrements('id');
 
             $table->float('temperature');
@@ -42,6 +42,6 @@ class CreateHistorySymptomsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('history_symptoms');
+        Schema::dropIfExists('history_symptoms_details');
     }
 }

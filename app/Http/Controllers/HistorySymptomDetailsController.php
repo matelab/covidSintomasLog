@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\HistorySymptom;
+use App\HistorySymptomDetails;
 use Illuminate\Http\Request;
 
-class HistorySymptomController extends Controller
+class HistorySymptomDetailsController extends Controller
 {
     public function __construct()
     {
