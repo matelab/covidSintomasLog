@@ -15,8 +15,8 @@
                         </div>
                     @endif
 
-                    <table class="table table-bordered table-hover">
-                        <thead>
+                    <table class="table table-bordered table-hover text-center">
+                        <thead class="thead-dark">
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Inicio de Tratamiento</th>
@@ -45,9 +45,11 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <nav class="justify-content-center">
-                        {{ $historySymptoms->links()}}
-                    </nav>
+                    <div class="row justify-content-center">
+                        <nav class="justify-content-center">
+                            {{ $historySymptoms->links()}}
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>

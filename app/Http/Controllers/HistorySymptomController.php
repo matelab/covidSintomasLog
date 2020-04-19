@@ -16,7 +16,7 @@ class HistorySymptomController extends Controller
     public function index()
     {
         /**Obtenemos Todos los Tratamientos del Usuario */
-        $historySymptoms = auth()->user()->historySymptoms()->paginate(15);
+        $historySymptoms = auth()->user()->historySymptoms()->orderBy('created_at','desc')->paginate(15);
         return view('tratamientos.index')->with(compact('historySymptoms'));
     }
 
