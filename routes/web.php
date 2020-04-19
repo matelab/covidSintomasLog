@@ -26,4 +26,5 @@ Route::middleware(['auth','verified'])->group(function () {
     Route::get('/tratamientos', 'HistorySymptomController@index')->name('tratamientos');
     Route::get('/sintomas', 'HistorySymptomDetailsController@index')->name('sintomas');
     Route::get('/sintomas/create', 'HistorySymptomDetailsController@create')->name('sintomasCreate');
+    Route::post('/sintomas/store', 'HistorySymptomDetailsController@store')->name('sintomasStore');
 });

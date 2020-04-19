@@ -26,7 +26,7 @@ class CreateHistorySymptomDetailsTable extends Migration
             $table->integer('sore_throat');
             $table->integer('fatigue');
             $table->integer('lung_pain');
-            $table->integer('Appetite');
+            $table->integer('appetite');
             $table->integer('smell');
             $table->integer('will');
             $table->integer('cough');
