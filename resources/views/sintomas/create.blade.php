@@ -2,7 +2,6 @@
 
 @section('title','Nuevo Control')
 
-@section('styles', asset('css/styles.css'))
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

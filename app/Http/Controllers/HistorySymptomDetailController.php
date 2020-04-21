@@ -19,7 +19,7 @@ class HistorySymptomDetailsController extends Controller
     public function index()
     {
         /**Obtenemos Todo el Historial de los Controles pero solo del Tratamiento Activo */
-        $symptoms = auth()->user()->HistorySymptom->historySymptomDetails()->orderBy('created_at','desc')->paginate(15);
+        $symptoms = auth()->user()->HistorySymptom->historySymptomDetails()->orderBy('created_at','desc')->paginate(10);
         return view('sintomas.index')->with(compact('symptoms'));
     }
 
