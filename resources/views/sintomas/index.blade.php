@@ -35,7 +35,7 @@
                                     <td>{{ $symptom->oxygen_saturation }}</td>
                                     <td>
                                     <form action="{{ route('sintomasDestroy',$symptom->id)}}" method="POST">
-                                    <a class="btn btn-info" href=""><i class="fas fa-info-circle"></i></a>
+                                    <a class="btn btn-info" href="{{ route('sintomasShow',$symptom)}}"><i class="fas fa-info-circle"></i></a>
                                         <a class="btn btn-success" href="{{ route('sintomasEdit',$symptom)}}"><i class="fas fa-edit"></i></a>
                                         @csrf
                                         @method('DELETE')

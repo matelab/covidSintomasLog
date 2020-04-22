@@ -85,7 +85,7 @@ class HistorySymptomDetailsController extends Controller
      */
     public function show(HistorySymptomDetail $historySymptomDetail)
     {
-        //
+        return view('sintomas.show')->with(compact('historySymptomDetail'));
     }
 
     /**

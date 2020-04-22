@@ -32,6 +32,8 @@ Route::middleware(['auth','verified'])->group(function () {
     Route::get('/sintomas/create', 'HistorySymptomDetailsController@create')->name('sintomasCreate');
     /**Guardando el Control Cargado */
     Route::post('/sintomas/store', 'HistorySymptomDetailsController@store')->name('sintomasStore');
+    /**Pagina para Ver un Control Cargado (Solo del Tratamiento Activo) */
+    Route::get('/sintomas/{historySymptomDetail}', 'HistorySymptomDetailsController@show')->name('sintomasShow');
     /**Pagina para Editar un Control Cargado (Solo del Tratamiento Activo) */
     Route::get('/sintomas/{historySymptomDetail}/edit', 'HistorySymptomDetailsController@edit')->name('sintomasEdit');
     /**Guardamos los Datos Editado del Control */
