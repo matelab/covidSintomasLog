@@ -25,7 +25,7 @@ $factory->define(HistorySymptomDetail::class, function (Faker $faker) {
             'will'=>$faker->numberBetween(1,5),
             'cough'=>$faker->numberBetween(1,5),
             'diarrhea'=>$faker->numberBetween(1,5),
-            'changes'=>$faker->text,
+            'changes_description'=>$faker->text,
             'commentary'=>$faker->text,
             'created_at'=>$faker->dateTime()
     ];

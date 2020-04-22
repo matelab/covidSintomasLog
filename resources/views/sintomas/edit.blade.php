@@ -526,16 +526,16 @@
                                 <legend class="textInputBig cambio">¿Notás algún cambio?</legend>
                                 <div class="col-sm-12">
                                     <label class="radioContainer">Si
-                                        <input id="test" type="radio" name="cambio" onchange='handleChange(this);' value="1" {{ old('cambio')=="1" ? 'checked='.'"'.'checked'.'"' : '' }}>
+                                        <input id="test" type="radio" name="cambio" onchange='handleChange(this);' value="1" {{ old('cambio', $historySymptomDetail->changes)=="1" ? 'checked='.'"'.'checked'.'"' : '' }}>
                                         <span class="checkmark"></span>
                                     </label>
                                     <label class="radioContainer">No
-                                        <input type="radio" name="cambio" onchange='handleChangeNot(this);' value="0" {{ old('cambio')=="0" ? 'checked='.'"'.'checked'.'"' : '' }}>
+                                        <input type="radio" name="cambio" onchange='handleChangeNot(this);' value="0" {{ old('cambio', $historySymptomDetail->changes)=="0" ? 'checked='.'"'.'checked'.'"' : '' }}>
                                         <span class="checkmark"></span>
                                     </label>
                                     <legend class="textInput text-left">¿Cual?</legend>
                                     <textarea id="textComment" class="form-control" cols="40" rows="0"
-                                disabled='disabled' name="textComment">{{ old('textComment', $historySymptomDetail->changes)}}</textarea>
+                                disabled='disabled' name="textComment">{{ old('textComment', $historySymptomDetail->changes_description)}}</textarea>
                                 </div>
                             </div>
                         </fieldset>

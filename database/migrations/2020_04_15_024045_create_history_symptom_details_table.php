@@ -31,8 +31,8 @@ class CreateHistorySymptomDetailsTable extends Migration
             $table->integer('will');
             $table->integer('cough');
             $table->integer('diarrhea');
-
-            $table->text('changes')->nullable();
+            $table->boolean('changes')->nullable()->default(false);
+            $table->text('changes_description')->nullable();
             $table->boolean('talk_doctor')->nullable()->default(false);
             $table->text('commentary')->nullable();
 

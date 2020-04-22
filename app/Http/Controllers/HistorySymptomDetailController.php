@@ -61,7 +61,12 @@ class HistorySymptomDetailsController extends Controller
          $historySymptomDetail->will = $request->input('voluntad');
          $historySymptomDetail->cough = $request->input('tos');
          $historySymptomDetail->diarrhea = $request->input('diarrea');
-         $historySymptomDetail->changes = $request->input('textComment');
+         $historySymptomDetail->changes = $request->input('cambio');
+         if ($request->cambio==1) {
+            $historySymptomDetail->changes_description = $request->input('textComment');
+         }else {
+            $historySymptomDetail->changes_description = '';
+         }
          $historySymptomDetail->talk_doctor = $request->input('hablar');
          $historySymptomDetail->commentary = $request->input('comentario');
          /**Guardamos Los Datos */
@@ -118,7 +123,11 @@ class HistorySymptomDetailsController extends Controller
         $historySymptomDetail->will = $request->input('voluntad');
         $historySymptomDetail->cough = $request->input('tos');
         $historySymptomDetail->diarrhea = $request->input('diarrea');
-        $historySymptomDetail->changes = $request->input('textComment');
+        if ($request->cambio==1) {
+            $historySymptomDetail->changes_description = $request->input('textComment');
+         }else {
+            $historySymptomDetail->changes_description = '';
+         }
         $historySymptomDetail->talk_doctor = $request->input('hablar');
         $historySymptomDetail->commentary = $request->input('comentario');
         /**Guardamos Los Datos */
