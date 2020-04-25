@@ -23,7 +23,6 @@ class HistorySymptomDetailsController extends Controller
         $symptoms = auth()->user()->HistorySymptom->historySymptomDetails()->orderBy('created_at','desc')->paginate(10);
         return view('sintomas.index')->with(compact('symptoms'));
     }
-
     /**
      * Show the form for creating a new resource.
      *

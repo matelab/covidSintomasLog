@@ -8,6 +8,7 @@
         <div class="col-md-12 col-lg-12">
             <div class="card">
                 <div class="card-body">
+                <h2 class="titleForm">Comenzaste el Tratamiento: {{$historySymptom->created_at}} y lo Terminaste {{$historySymptom->finished_date}}</h2>
                     <table class="table table-bordered table-hover text-center ">
                         <thead class="thead-dark">
                             <tr>
@@ -26,13 +27,7 @@
                                     <td>{{ $symptom->temperature }}</td>
                                     <td>{{ $symptom->oxygen_saturation }}</td>
                                     <td>
-                                    <form action="{{ route('sintomasDestroy',$symptom)}}" method="POST">
                                     <a class="btn btn-info" href="{{ route('sintomasShow',$symptom)}}"><i class="fas fa-info-circle"></i></a>
-                                        <a class="btn btn-success" href="{{ route('sintomasEdit',$symptom)}}"><i class="fas fa-edit"></i></a>
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
-                                    </form>
                                 </td>
                                 </tr>
                             @endforeach

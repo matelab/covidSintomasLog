@@ -60,4 +60,8 @@ class HistorySymptomDetail extends Model
             'textComment'=>'max:300',
             'comentario'=>'max:300',
         ];
+    public function historySymptom()
+    {
+    	return $this->belongsTo(HistorySymptom::class);
+    }
 }

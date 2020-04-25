@@ -29,41 +29,42 @@
                         <tbody>
                             @foreach($historySymptoms as $key => $historySymptom)
                                 <tr>
-                                    <th scope="row">{{ $key + 1}}</th>
+                                    <th scope="row">{{ $key + 1 }}</th>
                                     <td>{{ $historySymptom->created_at }}</td>
                                     <td>{{ $historySymptom->finished_date }}</td>
                                     <td>@switch ($historySymptom->status)
-                                            @case('Active')
-                                                En Tratamiento
-                                            @break
-                                            @case('Finished')
-                                                Tratamiento Finalizado
-                                            @break
-                                        @endswitch
-                                    </td>
-                                    <td>
-                                    <form action="{{ route('tratamientosUpdate',$historySymptom)}}" method="POST">
-                                        @csrf
-                                        @switch($historySymptom->status)
                                         @case('Active')
-                                        <button type="submit" class="btn btn-success"><i class="fas fa-check-circle"></i> Finalizar Tratamiento</button>
+                                            En Tratamiento
                                             @break
                                         @case('Finished')
-                                            <a class="btn btn-info"
-                                                href=""><i
-                                                    class="fa-info-circle"></i> Ver Historial de Controles</a>
+                                            Tratamiento Finalizado
+                                            @break
+                            @endswitch
+                            </td>
+                            <td>
+                                <form action="{{ route('tratamientosUpdate',$historySymptom) }}"
+                                    method="POST">
+                                    @csrf
+                                    @switch($historySymptom->status)
+                                        @case('Active')
+                                            <button type="submit" class="btn btn-success"><i
+                                                    class="fas fa-check-circle"></i> Finalizar Tratamiento</button>
+                                            @break
+                                        @case('Finished')
+                                            <a class="btn btn-info" href="{{route('sintomasFinished',$historySymptom)}}"><i class="fa-info-circle"></i> Ver Historial
+                                                de Controles</a>
                                             @break
                                         @default
                                     @endswitch
-                                    </form>
-                                    </td>
-                                </tr>
+                                </form>
+                            </td>
+                            </tr>
                             @endforeach
                         </tbody>
                     </table>
                     <div class="row justify-content-center">
                         <nav class="justify-content-center">
-                            {{ $historySymptoms->links()}}
+                            {{ $historySymptoms->links() }}
                         </nav>
                     </div>
                 </div>

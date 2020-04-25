@@ -16,7 +16,7 @@ class CreateHistorySymptomsTable extends Migration
         Schema::create('history_symptoms', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->date('finished_date')->nullable();//fecha para cuando finalizo el tratamiento
+            $table->dateTime('finished_date')->nullable();//fecha para cuando finalizo el tratamiento
             $table->string('status');//Active(cuando esta en el tratamiento), Finished(cuando Termino el Tratameinto)
 
             //FK user_id->Personas o Usuarios
