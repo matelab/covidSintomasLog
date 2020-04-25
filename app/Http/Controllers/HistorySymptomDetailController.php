@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Barryvdh\DomPDF\Facade as PDF;
 use App\HistorySymptomDetail;
 
 class HistorySymptomDetailsController extends Controller
@@ -86,7 +86,17 @@ class HistorySymptomDetailsController extends Controller
     {
         return view('sintomas.show')->with(compact('historySymptomDetail'));
     }
-
+    /**
+     * Display the specified resource. Para Exportar a PDF
+     *
+     * @param  \App\HistorySymptomDetail  $historySymptomDetail
+     * @return \Illuminate\Http\Response
+     */
+    public function exportPdf(HistorySymptomDetail $historySymptomDetail)
+    {
+        $pdf = PDF::loadView('sintomas.pdf',compact('historySymptomDetail'));
+        return $pdf->download('reporte-control.pdf');
+    }
     /**
      * Show the form for editing the specified resource.
      *

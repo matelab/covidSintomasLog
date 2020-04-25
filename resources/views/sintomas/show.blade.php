@@ -546,8 +546,8 @@
                         <div class="alert alert-danger alertBox" role="alert">
                             Falta completar campos
                         </div>
-                        <a href="{{ route('sintomas') }}" class="btn btn-primary btnForm"><i class="fas fa-file-pdf"></i> Generar PDF</a>
-                    <a href="{{ URL::previous() }}" class="btn btn-danger">Volver</a>
+                        <a href="{{ route('sintomasExportPdf', $historySymptomDetail) }}" class="btn btn-primary btnForm"><i class="fas fa-file-pdf"></i> Generar PDF</a>
+                        <a href="{{ URL::previous() }}" class="btn btn-danger">Volver</a>
                     <p></p>
                     <!-- HTML -->
                     <div id="fecha"></div>

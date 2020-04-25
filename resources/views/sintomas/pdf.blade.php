@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{asset('css/fontAmiri.css')}}" rel="stylesheet">
+    <title>seguiSalud</title>
+    <style>
+		body{
+			margin:0px;
+			padding:0px;
+            font-size: 16px;
+            font-family: 'Amiri', serif;
+		}
+		h1,h2{
+			margin:0px;
+		}
+        fieldset.comprobante{
+            width: max-content;
+			margin:0 auto;
+			border:1px solid #c5c5c5;
+			padding: 0px 7px 15px 7px;
+        }
+		.table{
+			border: 1px solid #000
+		}
+        header.resumen{
+            text-align: center;
+            font-size: 20pt;
+            background-color: #989898;
+            margin: 0px -7px;
+        }
+		.title{
+			font-size: 2.5rem;
+            padding: 0 10px;
+            color:#fff;
+		}
+        .subtitle {
+            font-size: 1.5rem;
+            background-color: #387ece;
+            color: #fff;
+        }
+        .result{
+            color: #464646;
+        }
+        .result table {
+            font-weight: bolder;
+            font-size: 1.6rem;
+            line-height: 27px;
+        }
+        footer{
+            text-align: center;
+        }
+        div{
+           line-height: 1.5;
+        }
+		.textObservaciones{
+			border: 1px solid #afaeae
+		}
+		.powered{
+			line-height: 45px;
+			vertical-align: top;
+			margin-right: 6px;
+		}
+    </style>
+</head>
+<body>
+    <fieldset class="comprobante">
+        <header class="resumen">
+			<h1 class="title">Resumen de Tu Control diario</h1>
+			<h2 class="subtitle">Recuerda Hacerte Revisiones Diarias</h2>
+		</header>
+		<aside>
+			<table border="0">
+				<tr>
+					<td>Fecha y Hora</td>
+				</tr>
+				<tr>
+					<td>{{ $historySymptomDetail->created_at}}</td>
+				</tr>
+			</table>
+		</aside>
+        <br>
+        <div class="result temperatura">
+            Temperatura
+            <table align="right"><td>{{ $historySymptomDetail->temperature}}</td></table>
+        </div>
+        <hr>
+        <div class="result animo">Saturación de oxigeno
+            <table align="right"><td>{{ $historySymptomDetail->oxygen_saturation}}</td></table>
+        </div>
+        <hr>
+        <div class="result animo">Estado de ánimo
+            <table align="right"><td>{{ $historySymptomDetail->mood}}</td></table>
+        </div>
+        <hr>
+        <div class="result garganta">Dolor de garganta
+            <table align="right"><td>{{ $historySymptomDetail->sore_throat}}</td></table>
+        </div>
+        <hr>
+        <div class="result cansancio">Cansancio
+            <table align="right"><td>{{ $historySymptomDetail->fatigue}}</td></table>
+        </div>
+        <hr>
+        <div class="result pulmon">Dolor de pulmón
+            <table align="right"><td>{{ $historySymptomDetail->lung_pain}}</td></table>
+        </div>
+        <hr>
+        <div class="result Apetito">Apetito
+            <table align="right"><td>{{ $historySymptomDetail->appetite}}</td></table>
+        </div>
+        <hr>
+        <div class="result olfato">Olfato
+            <table align="right"><td>{{ $historySymptomDetail->smell}}</td></table>
+        </div>
+        <hr>
+        <div class="result voluntad">Voluntad (¡Ganas de ganar!)
+            <table align="right"><td>{{ $historySymptomDetail->will}}</td></table>
+        </div>
+        <hr>
+        <div class="result tos">Tos
+            <table align="right"><td>{{ $historySymptomDetail->cough}}</td></table>
+        </div>
+        <hr>
+        <div class="result Diarrea">Diarrea
+            <table align="right"><td>{{ $historySymptomDetail->diarrhea}}</td></table>
+        </div>
+        <hr>
+            <fieldset class="textObservaciones">
+                <legend>¿Notás algún cambio?</legend>
+                {{ $historySymptomDetail->changes_description}}
+            </fieldset>
+        <hr>
+        <div class="result medico">¿Lo hablaste con un médico?
+            <table align="right"><td>{{ ($historySymptomDetail->talk_doctor) =="1" ? 'SI' : 'NO' }}</td></table>
+        </div>
+        <hr>
+        <fieldset class="textObservaciones">
+            <legend>Tus notas</legend>
+            {{ $historySymptomDetail->commentary}}
+        </fieldset>
+        <br>
+    <footer>
+		<span class="powered">Powered by</span>
+		<span>
+			<img width="50" height="57" alt="Matelab" src="data:image/png;base64,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" />
+		</span>
+	</footer>
+    </fieldset>
+
+</body>
+</html>
