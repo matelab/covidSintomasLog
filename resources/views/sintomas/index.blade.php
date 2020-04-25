@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','Historial de Sintomas')
+@section('title','Historial de Sintomas (Activo)')
 
 @section('content')
 <div class="container">
