@@ -26,6 +26,8 @@ Route::middleware(['auth','verified'])->group(function () {
     Route::get('/home', 'HomeController@index')->name('home');
     /**Pagina del Historial de los Tratamientos */
     Route::get('/tratamientos', 'HistorySymptomController@index')->name('tratamientos');
+    /**Finalizar el Tratamiento*/
+    Route::post('/tratamientos/{historySymptom}', 'HistorySymptomController@update')->name('tratamientosUpdate');
     /**Pagina del Historial de los Controles Cargados (Sintomas) */
     Route::get('/sintomas', 'HistorySymptomDetailsController@index')->name('sintomas');
     /**Pagina para el Alta de un Control */

@@ -9,6 +9,7 @@
             <div class="card">
                 @include('includes.header')
                 <div class="card-body">
+                    @include('flash::message')
                     @if(session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -40,7 +41,22 @@
                                             @break
                                         @endswitch
                                     </td>
-                                    <td>Ver</td>
+                                    <td>
+                                    <form action="{{ route('tratamientosUpdate',$historySymptom)}}" method="POST">
+                                        @csrf
+                                        @switch($historySymptom->status)
+                                        @case('Active')
+                                        <button type="submit" class="btn btn-success"><i class="fas fa-check-circle"></i> Finalizar Tratamiento</button>
+                                            @break
+                                        @case('Finished')
+                                            <a class="btn btn-info"
+                                                href=""><i
+                                                    class="fa-info-circle"></i> Ver Historial de Controles</a>
+                                            @break
+                                        @default
+                                    @endswitch
+                                    </form>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

@@ -76,7 +76,14 @@ class HistorySymptomController extends Controller
      */
     public function update(Request $request, HistorySymptom $historySymptom)
     {
-        //
+        /**Cambiamos el Estado del Tratamiento */
+        $historySymptom->status = 'Finished';
+        /**Guardamos los Cambios */
+        $historySymptom->save();
+        /**Generamos Un Mensaje y Redireccionammos */
+        flash('¡Bien Hecho! Finalizaste el Tratamiento.')->success()->important();
+        /**Volvemos al Historial de Tratamientos */
+        return redirect('/tratamientos');
     }
 
     /**

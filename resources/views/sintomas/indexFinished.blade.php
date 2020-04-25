@@ -7,15 +7,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12 col-lg-12">
             <div class="card">
-                @include('includes.header')
                 <div class="card-body">
-                    @include('flash::message')
-                    @if(session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
                     <table class="table table-bordered table-hover text-center ">
                         <thead class="thead-dark">
                             <tr>
