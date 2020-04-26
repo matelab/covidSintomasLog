@@ -11,7 +11,6 @@ class HistorySymptomDetail extends Model
         'fiebre.required'=>'Es Obligatorio Seleccionar una Temperatura.',
         'fiebre.min'=>'Valor no Permitido de Temperatura',
         'fiebre.max'=>'Valor no Permitido de Temperatura',
-        'saturacion'=>'Es Obligatorio Seleccionar un Nivel de Saturación de oxigeno.',
         'saturacion.min'=>'Valor no Permitido para Nivel de Saturación de oxigeno.',
         'saturacion.max'=>'Valor no Permitido para Nivel de Saturación de oxigeno.',
         'estado'=>'Es Obligatorio Seleccionar un Valor para Estado de Animo.',
@@ -47,7 +46,7 @@ class HistorySymptomDetail extends Model
 
     public static $rules = [
             'fiebre' => 'required|numeric|min:36|max:39.1',
-            'saturacion'=>'required|numeric|min:32|max:100',
+            'saturacion'=>'numeric|min:32|max:100',
             'estado'=>'required|numeric|min:1|max:10',
             'garganta'=>'required|numeric|min:1|max:10',
             'cansancio'=>'required|numeric|min:1|max:10',

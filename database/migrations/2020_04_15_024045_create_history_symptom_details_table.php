@@ -21,7 +21,7 @@ class CreateHistorySymptomDetailsTable extends Migration
             $table->foreign('history_symptom_id')->references('id')->on('history_symptoms');
 
             $table->float('temperature');
-            $table->float('oxygen_saturation');
+            $table->float('oxygen_saturation')->nullable();
             $table->integer('mood');
             $table->integer('sore_throat');
             $table->integer('fatigue');

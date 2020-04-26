@@ -589,7 +589,7 @@
         }
     }
 $(document).ready(function(){
-    var radioButtonType = ["fiebre","saturacion","estado", "garganta", "cansancio", "pulmon", "apetito", "olfato", "voluntad",
+    var radioButtonType = ["fiebre","estado", "garganta", "cansancio", "pulmon", "apetito", "olfato", "voluntad",
     "tos", "diarrea", "cambio", "hablar"]
 
     $('input[type=radio]').change(function(){
