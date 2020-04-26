@@ -94,8 +94,9 @@ class HistorySymptomDetailsController extends Controller
      */
     public function exportPdf(HistorySymptomDetail $historySymptomDetail)
     {
+        $date = $historySymptomDetail->created_at;
         $pdf = PDF::loadView('sintomas.pdf',compact('historySymptomDetail'));
-        return $pdf->download('reporte-control.pdf');
+        return $pdf->download("Reporte-Control-$date.pdf");
     }
     /**
      * Show the form for editing the specified resource.
