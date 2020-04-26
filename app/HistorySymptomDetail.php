@@ -3,9 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Propaganistas\LaravelFakeId\RoutesWithFakeIds;
 class HistorySymptomDetail extends Model
 {
+    use RoutesWithFakeIds;
     /**Validaciones y mensajes personalizados*/
     public static $messages = [
         'fiebre.required'=>'Es Obligatorio Seleccionar una Temperatura.',
