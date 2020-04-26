@@ -16,7 +16,7 @@
                         </div>
                     @endif
 
-                    <table class="table table-bordered table-hover text-center">
+                    <table class="table table-bordered table-hover text-center nowrap" id="indexTable" style="width:100%">
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col">#</th>
@@ -51,7 +51,9 @@
                                                     class="fas fa-check-circle"></i> Finalizar Tratamiento</button>
                                             @break
                                         @case('Finished')
-                                            <a class="btn btn-info" href="{{route('sintomasFinished',$historySymptom)}}"><i class="fa-info-circle"></i> Ver Historial
+                                            <a class="btn btn-info"
+                                                href="{{ route('sintomasFinished',$historySymptom) }}"><i
+                                                    class="fa fa-info-circle"></i> Ver Historial
                                                 de Controles</a>
                                             @break
                                         @default
@@ -73,3 +75,4 @@
     </div>
 </div>
 @endsection
+

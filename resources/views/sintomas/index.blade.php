@@ -16,7 +16,8 @@
                         </div>
                     @endif
 
-                    <table class="table table-bordered table-hover text-center ">
+                    <table class="table table-bordered table-hover text-center nowrap" id="indexTable"
+                    style="width:100%">
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col">#</th>
@@ -35,11 +36,11 @@
                                     <td>{{ $symptom->oxygen_saturation }}</td>
                                     <td>
                                     <form action="{{ route('sintomasDestroy',$symptom)}}" method="POST">
-                                    <a class="btn btn-info" href="{{ route('sintomasShow',$symptom)}}"><i class="fas fa-info-circle"></i></a>
-                                        <a class="btn btn-success" href="{{ route('sintomasEdit',$symptom)}}"><i class="fas fa-edit"></i></a>
+                                    <a class="btn btn-info" data-toggle="tooltip" title="Mas Infromación" href="{{ route('sintomasShow',$symptom)}}"><i class="fas fa-info-circle"></i></a>
+                                        <a class="btn btn-success" data-toggle="tooltip" title="Editar Control" href="{{ route('sintomasEdit',$symptom)}}"><i class="fas fa-edit"></i></a>
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                        <button type="submit" data-toggle="tooltip" title="Eliminar Control" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                                     </form>
                                 </td>
                                 </tr>

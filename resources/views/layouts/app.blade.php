@@ -9,10 +9,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title', 'SeguiSalud')</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -21,6 +17,10 @@
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <!--Fonts Awesome-->
     <link rel="stylesheet" href="{{ asset('fontawesome/css/all.css') }}">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{{ asset('dataTables/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('dataTables/responsive/responsive.bootstrap4.min.css') }}">
 </head>
 
 <body>
@@ -90,15 +90,21 @@
             <span class="fuente">Fuente: Creado por <a href="https://www.instagram.com/merysunsr/?hl=es-la">Marisol
                     San Roman</a></span>
             <span class="matelabLogo">Powered by: <a href="http://www.matelab.com.ar/es/"><img
-                        src="{{ asset('img/logo_matelab.svg') }}" width="60" height="60" alt="Matelab" /></a></span>
+                        src="{{ asset('img/logo_matelab.svg') }}" width="60" height="60"
+                        alt="Matelab" /></a></span>
         </div>
     </footer>
 </body>
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/i18n/jquery-ui-i18n.min.js">
-</script>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="{{ asset('js/jquery-3.3.1.js') }}"></script>
+<script src="{{ asset('js/popper.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<!-- DataTables	https://datatables.net/-->
+<script src="{{ asset('dataTables/dataTables.min.js') }}"></script>
+<script src="{{ asset('dataTables/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('dataTables/responsive/dataTables.responsive.min.js') }}"></script>
+<script src="{{ asset('dataTables/responsive/responsive.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('js/scripts.js') }}"></script>
 @yield('scripts')
 
 </html>

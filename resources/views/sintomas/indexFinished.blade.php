@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <h2 class="titleForm">Comenzaste el Tratamiento: {{ $historySymptom->created_at }} y lo Terminaste
                         {{ $historySymptom->finished_date }}</h2>
-                    <table class="table table-bordered table-hover text-center ">
+                    <table class="table table-bordered table-hover text-center nowrap" id="indexTable" style="width:100%">
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col">#</th>
@@ -28,7 +28,7 @@
                                     <td>{{ $symptom->temperature }}</td>
                                     <td>{{ $symptom->oxygen_saturation }}</td>
                                     <td>
-                                        <a class="btn btn-info"
+                                        <a class="btn btn-info" data-toggle="tooltip" title="Mas Infromación"
                                             href="{{ route('sintomasShow',$symptom) }}"><i
                                                 class="fas fa-info-circle"></i></a>
                                     </td>
