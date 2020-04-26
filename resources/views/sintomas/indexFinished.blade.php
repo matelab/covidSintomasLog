@@ -36,16 +36,12 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <div class="row align-items-center">
-                        <div class="col-6">
-                            <nav class="justify-content-center">
-                                {{ $symptoms->links() }}
-                            </nav>
-                        </div>
-                        <div class="col-6">
-                            <a href="{{ route('tratamientos') }}" class="btn btn-danger">Volver</a>
-                        </div>
+                    <div class="row justify-content-center">
+                        <nav class="justify-content-center">
+                            {{ $symptoms->links() }}
+                        </nav>
                     </div>
+                    <a href="{{ route('tratamientos') }}" class="btn btn-danger">Volver</a>
                 </div>
             </div>
         </div>
