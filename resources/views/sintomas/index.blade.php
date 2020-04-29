@@ -40,7 +40,7 @@
                                         <a class="btn btn-success" data-toggle="tooltip" title="Editar Control" href="{{ route('sintomasEdit',$symptom)}}"><i class="fas fa-edit"></i></a>
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" data-toggle="tooltip" title="Eliminar Control" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                         <a href="#" data-toggle="tooltip" title="Eliminar Control" class="btn btn-danger" onclick="info(this);"><i class="fas fa-trash-alt"></i></a>
                                     </form>
                                 </td>
                                 </tr>

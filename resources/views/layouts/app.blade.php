@@ -19,8 +19,9 @@
     <link rel="stylesheet" href="{{ asset('fontawesome/css/all.css') }}">
     <!-- DataTables -->
     <link rel="stylesheet" href="{{ asset('dataTables/dataTables.bootstrap4.min.css') }}">
-    <link rel="stylesheet"
-        href="{{ asset('dataTables/responsive/responsive.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dataTables/responsive/responsive.bootstrap4.min.css') }}">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="{{ asset('sweetalert2/sweetalert2.min.css') }}">
 </head>
 
 <body>
@@ -104,7 +105,10 @@
 <script src="{{ asset('dataTables/dataTables.bootstrap4.min.js') }}"></script>
 <script src="{{ asset('dataTables/responsive/dataTables.responsive.min.js') }}"></script>
 <script src="{{ asset('dataTables/responsive/responsive.bootstrap4.min.js') }}"></script>
+<!-- ScriptsApp -->
 <script src="{{ asset('js/scripts.js') }}"></script>
+<!-- SweetAlert2 -->
+<script src="{{ asset('sweetalert2/sweetalert2.min.js') }}"></script>
 @yield('scripts')
 
 </html>
