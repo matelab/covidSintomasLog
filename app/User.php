@@ -37,9 +37,27 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
     /**Método para la relación entre el Modelo User y HistorySymptom */
-    public function symptoms()
+    public function historySymptoms()
     {
-        /**Un Usuario Muchos Symptom */
+        /**Un Usuario Muchos historySymptoms */
         return $this->hasMany(HistorySymptom::class);
+    }
+    /**Metodo para el history_symptom_id del usuario */
+    public function getHistorySymptomAttribute()
+    {
+        /**Accedemos al HistorySymptom con el Estado Active solo la Primer Coincidencia*/
+        $historySymptom = $this->historySymptoms()->where('status','Active')->first();
+        /**Si tiene un HistorySymptom Activo devolvemos el ID */
+        if ($historySymptom) {
+            return $historySymptom;
+        }else {
+            /**Si no tiene ningún HistorySymptom activo lo creamos uno */
+            $historySymptom = New HistorySymptom();
+            $historySymptom->status = 'Active';
+            $historySymptom->user_id = $this->id;
+            $historySymptom->save();
+            return $historySymptom;
+        }
+
     }
 }

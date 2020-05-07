@@ -23,9 +23,9 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-
         parent::boot();
+        Route::model('HistorySymptom', 'App\HistorySymptom');
+        Route::model('HistorySymptomDetail', 'App\HistorySymptomDetail');
     }
 
     /**

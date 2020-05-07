@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\HistorySymptom;
 use Illuminate\Http\Request;
+
+use App\HistorySymptom;
+use Carbon\Carbon;
 
 class HistorySymptomController extends Controller
 {
@@ -18,10 +20,10 @@ class HistorySymptomController extends Controller
      */
     public function index()
     {
-        $symptoms = auth()->user()->symptoms()->paginate(5);
-        return view('sintomas.index')->with(compact('symptoms'));
+        /**Obtenemos Todos los Tratamientos del Usuario */
+        $historySymptoms = auth()->user()->historySymptoms()->orderBy('created_at','desc')->paginate(15);
+        return view('tratamientos.index')->with(compact('historySymptoms'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -46,12 +48,14 @@ class HistorySymptomController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\HistorySymptom  $historySymptom
+     * @param  \App\HistorySymptom  $historySymptoms
      * @return \Illuminate\Http\Response
      */
     public function show(HistorySymptom $historySymptom)
     {
-        //
+        /**Obtenemos Todo el Historial de los Controles por el ID de Tratamiento Los Finalizados*/
+        $symptoms = $historySymptom->historySymptomDetails()->orderBy('created_at','desc')->paginate(10);
+        return view('sintomas.indexFinished')->with(compact('symptoms','historySymptom'));
     }
 
     /**
@@ -74,7 +78,15 @@ class HistorySymptomController extends Controller
      */
     public function update(Request $request, HistorySymptom $historySymptom)
     {
-        //
+        /**Cambiamos el Estado del Tratamiento */
+        $historySymptom->status = 'Finished';
+        $historySymptom->finished_date = Carbon::now();
+        /**Guardamos los Cambios */
+        $historySymptom->save();
+        /**Generamos Un Mensaje y Redireccionammos */
+        flash('¡Bien Hecho! Finalizaste el Tratamiento.')->success()->important();
+        /**Volvemos al Historial de Tratamientos */
+        return redirect('/tratamientos');
     }
 
     /**
