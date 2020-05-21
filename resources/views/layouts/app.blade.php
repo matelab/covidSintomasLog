@@ -90,7 +90,7 @@
     <footer class="site-footer">
         <div class="footer-nav-item company-name">Todos los derechos reservados © 2020</div>
         <div class="footerdata">
-            <span class="fuente">Fuente: Creado por <a href="https://www.instagram.com/merysunsr/?hl=es-la">Marisol
+            <span class="fuente">Source: <a href="https://www.instagram.com/merysunsr/?hl=es-la">Marisol
                     San Roman</a></span>
             <span class="matelabLogo">Powered by: <a href="http://www.matelab.com.ar/es/"><img
                         src="{{ asset('img/logo_matelab.svg') }}" width="60" height="60"

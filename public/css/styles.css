@@ -4,16 +4,11 @@
     /*max-width: 540px; Original 650px*/
     text-align: center;
     background-color: rgba(255, 255, 255, 0.93);
-<<<<<<< HEAD
-=======
-    padding: 11px 17px;
->>>>>>> a145014757993661973dddd14da23f8f6ef36810
     color: #343434;
     border-radius: 6px;
     position:relative;
     z-index:2;
   }
-<<<<<<< HEAD
   .Agenda .card{
     -webkit-box-shadow: 4px 3px 16px -6px rgba(0,0,0,0.75);
 -moz-box-shadow: 4px 3px 16px -6px rgba(0,0,0,0.75);
@@ -24,8 +19,6 @@ box-shadow: 4px 3px 16px -6px rgba(0,0,0,0.75);
     max-width: 430px;
     height: auto;
   }
-=======
->>>>>>> a145014757993661973dddd14da23f8f6ef36810
   .errorDate{
     display: none;
   }
@@ -98,11 +91,7 @@ box-shadow: 4px 3px 16px -6px rgba(0,0,0,0.75);
     padding-bottom: 1rem;
   }
   .radioGroup .col-sm-12{
-<<<<<<< HEAD
     background-color: #e5e5e54d;
-=======
-    background-color: #e5e5e5;
->>>>>>> a145014757993661973dddd14da23f8f6ef36810
     color: #4b4b4b;
   }
   .fechaHora input{
@@ -200,7 +189,6 @@ box-shadow: 4px 3px 16px -6px rgba(0,0,0,0.75);
   .matelabLogo{
     float: right;
   }
-<<<<<<< HEAD
   .introImg{
     width: 19%;
     display: inline-block;
@@ -230,5 +218,3 @@ box-shadow: 4px 3px 16px -6px rgba(0,0,0,0.75);
   }
 
   }
-=======
->>>>>>> a145014757993661973dddd14da23f8f6ef36810

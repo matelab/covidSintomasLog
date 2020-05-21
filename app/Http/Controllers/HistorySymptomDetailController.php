@@ -133,6 +133,7 @@ class HistorySymptomDetailsController extends Controller
         $historySymptomDetail->will = $request->input('voluntad');
         $historySymptomDetail->cough = $request->input('tos');
         $historySymptomDetail->diarrhea = $request->input('diarrea');
+        $historySymptomDetail->changes = $request->input('cambio');
         if ($request->cambio==1) {
             $historySymptomDetail->changes_description = $request->input('textComment');
          }else {

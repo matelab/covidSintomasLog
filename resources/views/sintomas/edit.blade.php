@@ -6,13 +6,10 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12 col-lg-12">
-<<<<<<< HEAD
             <div class="estadosSalud">
                 <div class="referencias">Para marcar tus síntomas podes utilizar nuestras referencias</div>
                 <img src="{{ asset('img/estados.png') }}" width="624" height="169" alt="Estados de salud" />
             </div>
-=======
->>>>>>> a145014757993661973dddd14da23f8f6ef36810
             <div class="card">
                 <div class="card-body text-center">
                     @if(session('status'))
@@ -542,7 +539,7 @@
                                     </label>
                                     <legend class="textInput text-left">¿Cual?</legend>
                                     <textarea id="textComment" class="form-control" cols="40" rows="0"
-                                disabled='disabled' name="textComment">{{ old('textComment', $historySymptomDetail->changes_description)}}</textarea>
+                                    {{ old('cambio', $historySymptomDetail->changes)=="0" ? 'disabled='.'"'.'disabled'.'"' : ''}}name="textComment">{{ old('textComment', $historySymptomDetail->changes_description)}}</textarea>
                                 </div>
                             </div>
                         </fieldset>
