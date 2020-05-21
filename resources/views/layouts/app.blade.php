@@ -103,7 +103,7 @@
 <script src="{{ asset('js/popper.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 <!-- DataTables	https://datatables.net/-->
-<script src="{{ asset('dataTables/dataTables.min.js') }}"></script>
+<script src="{{ asset('dataTables/datatables.min.js') }}"></script>
 <script src="{{ asset('dataTables/dataTables.bootstrap4.min.js') }}"></script>
 <script src="{{ asset('dataTables/responsive/dataTables.responsive.min.js') }}"></script>
 <script src="{{ asset('dataTables/responsive/responsive.bootstrap4.min.js') }}"></script>
