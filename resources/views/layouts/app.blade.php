@@ -87,14 +87,36 @@
             @yield('content')
         </main>
     </div>
-    <footer class="site-footer">
-        <div class="footer-nav-item company-name">Todos los derechos reservados © 2020</div>
+        <footer style="position: absolute; bottom: 0; width: 100%;" class="site-footer">
+        <span class="footer-nav-item company-name">
+			<a href="https://www.matelab.com.ar/avisolegal/es/" target="_blank">
+				Terminos & Condiciones</a> | 
+		</span>	
+		<span class="footer-nav-item company-name">
+			<a href="https://raw.githubusercontent.com/matelab/covidSintomasLog/master/LICENSE" target="_blank">
+				GPLv3
+			</a>
+		</span>
         <div class="footerdata">
-            <span class="fuente">Source: <a href="https://www.instagram.com/merysunsr/?hl=es-la">Marisol
-                    San Roman</a></span>
-            <span class="matelabLogo">Powered by: <a href="http://www.matelab.com.ar/es/"><img
-                        src="{{ asset('img/logo_matelab.svg') }}" width="60" height="60"
-                        alt="Matelab" /></a></span>
+		    <center>
+		    		<span class="fuente" >
+		    			Inspirado en un diseño de
+		    			<p>
+		    				<a href="https://marisolsanroman.com/" target="_blank">
+		    					Marisol San Roman
+		    				</a>
+		    			</p>
+		    		</span>
+		    		<span class="matelabLogo">
+		    			Powered by: 
+		    			<a href="https://www.matelab.com.ar">
+		    				<img src="{{ asset('img/logo_matelab.svg') }}" 
+		    					width="60" 
+		    					height="60"
+		    					alt="Matelab" />
+		    			</a>
+		    		</span>
+            </center>
         </div>
     </footer>
 </body>
