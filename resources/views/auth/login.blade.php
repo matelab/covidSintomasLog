@@ -70,4 +70,28 @@
         </div>
     </div>
 </div>
+<br>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <b>¿Qué hacemos con tus datos?</b>
+                </div>
+
+                <div class="card-body">
+                    <p>
+                        <b>NADA</b>, los unicos datos que vamos a solicitar son tu nombre y un e-mail, nuestro objetivo es ayudar y no queremos tu información.
+                    </p>
+                    <p>
+                        Tampoco vamos a ver tu localización ni venderte publicidad de ningun tipo.
+                    </p>
+                    <p>
+                        ¡Muchas Gracias!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
