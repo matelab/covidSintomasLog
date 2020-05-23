@@ -88,15 +88,17 @@
         </main>
     </div>
         <footer style="position: absolute; bottom: 0; width: 100%;" class="site-footer">
-        <span class="footer-nav-item company-name">
-			<a href="https://www.matelab.com.ar/avisolegal/es/" target="_blank">
-				Terminos & Condiciones</a> | 
-		</span>	
-		<span class="footer-nav-item company-name">
-			<a href="https://raw.githubusercontent.com/matelab/covidSintomasLog/master/LICENSE" target="_blank">
-				GPLv3
-			</a>
-		</span>
+		<center>
+			<span class="footer-nav-item company-name">
+				<a href="https://www.matelab.com.ar/avisolegal/es/" target="_blank">
+					Terminos & Condiciones</a> | 
+			</span>	
+			<span class="footer-nav-item company-name">
+				<a href="https://raw.githubusercontent.com/matelab/covidSintomasLog/master/LICENSE" target="_blank">
+					GPLv3
+				</a>
+			</span>
+		</center>
         <div class="footerdata">
 		    <center>
 		    		<span class="fuente" >
