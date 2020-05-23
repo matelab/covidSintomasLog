@@ -110,7 +110,7 @@
 		    			</p>
 		    		</span>
 		    		<span class="matelabLogo">
-		    			Powered by: 
+		    			Powered by 
 		    			<a href="https://www.matelab.com.ar">
 		    				<img src="{{ asset('img/logo_matelab.svg') }}" 
 		    					width="60" 
