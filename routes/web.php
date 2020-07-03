@@ -13,17 +13,20 @@
 
 Auth::routes(['verify' => true]);
 
-Route::get('/', function(){
-    if(Auth::check()){
-        return view('home');
-    }else {
-        return view('auth.login');
-    }
+Route::get('/', function () {
+    return redirect()->route("home");
 });
 
+/**Pagina de Inicio del Sistema */
+Route::get('/home', 'HomeController@index')->name('home');
+/**Permitir logout con petición get */
+Route::get("/logout", function () {
+    Auth::logout();
+    return redirect()->route("home");
+})->name("logout");
+
+/**Rutas que que este Verificado el Mail para poder Acceder */
 Route::middleware(['auth','verified'])->group(function () {
-    /**Pagina de Inicio del Sistema */
-    Route::get('/home', 'HomeController@index')->name('home');
     /**Pagina del Historial de los Tratamientos */
     Route::get('/tratamientos', 'HistorySymptomController@index')->name('tratamientos');
     /**Finalizar el Tratamiento*/
