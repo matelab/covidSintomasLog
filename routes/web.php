@@ -12,6 +12,8 @@
 */
 
 Auth::routes(['verify' => true]);
+/**Para Forzar el HTTPS */
+URL::forceScheme('https');
 
 Route::get('/', function () {
     return redirect()->route("home");
